@@ -1,0 +1,11 @@
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dev artifacts only
+take_ss.py
+__pycache__/

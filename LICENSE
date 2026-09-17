@@ -1,0 +1,46 @@
+BIOWATCH-AI RESEARCH-USE LICENSE
+================================
+
+Copyright (c) 2026, the BIOWATCH-AI contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to use,
+copy, modify, and distribute the Software for NON-COMMERCIAL ACADEMIC AND
+RESEARCH PURPOSES ONLY, subject to the following conditions:
+
+1. ATTRIBUTION. Redistributions of source code must retain the above copyright
+   notice, this license text, and the integrity statement printed to the
+   browser console on boot.
+
+2. STRUCTURAL HONESTY. The six "Structural Honesty Rules" documented in
+   index.html are a material part of this Software. Modified versions must
+   either:
+     (a) retain them in full, or
+     (b) prominently document, in the user interface and in any redistribution,
+         how they were changed or weakened, and why.
+   Distributing a version that silently removes, disables, or relabels these
+   safeguards is prohibited.
+
+3. NO CLINICAL OR OPERATIONAL USE. The Software is a research prototype. It
+   MUST NOT be used:
+     * as a clinical diagnostic device;
+     * as an operational public-health, public-safety, or biosecurity system;
+     * to trigger automated public-health interventions;
+     * to communicate surveillance findings to the public as fact.
+
+4. NO MISREPRESENTATION. The Software contains no trained machine-learning
+   model, no validated performance metric, and no real surveillance data.
+   You may not market, deploy, or describe a derivative work in a way that
+   implies validated operational capability without independent peer-reviewed
+   evidence.
+
+5. SYNTHETIC DATA LABELING. All deterministic synthetic outputs must remain
+   visibly labelled "SIMULATED" (or an equivalent honest disclosure) at the
+   point of display.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
