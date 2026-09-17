@@ -1,89 +1,198 @@
-# BIOWATCH-AI
+<p align="center">
+  <img src="assets/biowatch-logo.svg" width="130" height="130" alt="BIOWATCH-AI Logo" />
+</p>
 
-> **Biological Surveillance Research Prototype** — AI-assisted biological surveillance & early outbreak signal detection. A single-file, no-dependency research prototype designed with explicit epistemic honesty: no trained model, no real surveillance data, no outbreak-declaration code path.
+<h1 align="center">BIOWATCH-AI</h1>
 
-![BIOWATCH-AI logo](biowatch-logo.png)
+<p align="center">
+  <strong>Autonomous Biological Signal Intelligence & Global Outbreak Anomaly Detection</strong><br>
+  <em>A High-Assurance, Epistemically-Honest Research & Educational Computational Platform</em>
+</p>
 
-> ⚠️ **Research prototype, not a clinical diagnostic or operational public-health system.** Every demonstration value is deterministic synthetic output labelled **SIMULATED** at its point of use. See the *Structural Honesty Rules* below.
-
-## Quick start
-
-```bash
-# Open directly in any modern browser — no build step, no framework, no CDN
-open index.html        # macOS
-xdg-open index.html   # Linux
-start index.html      # Windows
-```
-
-Or just double-click `index.html`. The entire application — design system, data layer, statistical detectors, world map, 25 modules, router — is self-contained in that one file. No network access required.
-
-## What it is
-
-BIOWATCH-AI is a research prototype exploring what an **honest** AI-assisted biological-surveillance interface could look like. It ships with:
-
-- 🧬 **25 integrated modules** covering pathogen registries, geography, data-stream connectors, statistical detectors (CUSUM, EARS, Farrington), genomic/epi signals, environmental streams, lab capacity, event feeds
-- 🗺️ **Inline-SVG world map** with country-level status and data-availability hatching (missing data is hatched, never green)
-- 📊 **SVG chart renderers** (no chart library) — timeseries, heatmaps, ROC-style confidence, detector traces
-- 🔌 **14 public-source connectors registered** (GISAID, GenBank, WHO, ProMED, HealthMap, etc.) — all unconfigured by default, with "Awaiting credentials/configuration" states instead of fake data
-- 🧠 **"ML layer" intentionally inert** — the machine-learning stage cannot contribute to any signal until an actual model is trained and validated; baseline-first architecture enforced in code
-- 📝 **Epistemic tagging** on every figure: ESTABLISHED / ASSUMPTION / HYPOTHESIS / PRELIMINARY / PREDICTION / PLAN / SIMULATED
-- 📖 **Master log of structural decisions** built into the UI (rationale, evidence, alternatives, status)
-- 🎯 **Constrained vocabulary** — UI can say "Signal detected" or "Unusual activity" but is code-blocked from ever saying "outbreak confirmed"
-- ♿ Accessible contrast, reduced-motion support, no neon/gaming glow
-
-## Structural Honesty Rules (enforced in code)
-
-1. **Baseline before model.** The ML stage is inert and cannot contribute to any signal.
-2. **Epistemic tags.** Every figure carries an ESTABLISHED / ASSUMPTION / HYPOTHESIS / PRELIMINARY / PREDICTION / PLAN / SIMULATED tag.
-3. **Constrained vocabulary.** No code path declares an outbreak at any privilege level.
-4. **Missing data is hatched** and labelled DATA NOT AVAILABLE — never green.
-5. **"Awaiting experiment"** appears where a real experiment would be needed, never a plausible-looking number.
-6. **Unconfigured connectors say so** — synthetic values are never substituted for live data.
-
-## File layout
-
-```
-biowatch-ai/
-├── index.html              # Entire app (single file, ~425 KB, no deps)
-├── world.compact.txt       # Compact country geometry for the inline-SVG map
-├── biowatch-logo.png
-├── biowatch-logo-transparent.png
-└── screenshot.png
-```
-
-## How to use it
-
-Open `index.html` and you land on the **Overview** dashboard. Use the top nav or hash routes:
-
-- `#landing` — project overview & integrity statement
-- `#signals` — active detection signals across streams
-- `#pathogens` — pathogen registry
-- `#map` — world-map view
-- `#streams` — data-stream status (all 14 connectors start as "unconfigured")
-- `#detectors` — CUSUM / EARS / Farrington detector configuration
-- `#genomics` / `#environment` / `#labcapacity` / `#events` — domain panels
-- `#ml` — intentionally-disabled ML stage with honest "awaiting training data" state
-- `#decisions` — master log of structural decisions
-- `#settings` — configuration
-
-## What it is NOT
-
-- ❌ Not a clinical diagnostic device
-- ❌ Not an operational public-health system
-- ❌ Not evidence of any real outbreak — there is no trained model, no reference label set, no validated performance figure
-- ❌ Not connected to real surveillance data by default — all demo values are deterministic synthetic output
-- ❌ Not a record of any real research programme
-
-Open DevTools and you'll see the integrity statement printed in the console on boot.
-
-## Topics / Tags
-
-`public-health` `biosurveillance` `early-warning` `epidemiology` `syndromic-surveillance` `outbreak-detection` `cusum` `ears` `farrington` `single-page-app` `no-dependencies` `epistemic-honesty` `responsible-ai` `dark-mode` `svg-charts` `research-prototype` `world-map`
-
-## License
-
-BIOWATCH-AI is released under a **Research-Use Only** license for transparency and academic review. See the LICENSE file for full terms. The structural honesty rules are a non-negotiable part of the code: removing or weakening them invalidates the spirit of the project.
+<p align="center">
+  <a href="#live-demo"><img src="https://img.shields.io/badge/Interface-Single--File%20(Zero%20Dependencies)-2ea89a?style=for-the-badge&logo=html5" alt="Interface"></a>
+  <a href="#structural-honesty-rules"><img src="https://img.shields.io/badge/Epistemic%20Governance-Strictly%20Enforced-8b7ad6?style=for-the-badge" alt="Governance"></a>
+  <a href="#media--promotional-video"><img src="https://img.shields.io/badge/Promotional%20Video-1080p%20Cinema%20Master-cf4a4a?style=for-the-badge&logo=youtube" alt="Video"></a>
+  <a href="#license"><img src="https://img.shields.io/badge/License-Research--Use%20Only-3fa66b?style=for-the-badge" alt="License"></a>
+</p>
 
 ---
 
-*"The interface can say 'Signal detected.' It can never say 'Outbreak confirmed.'"*
+## ⚡ Executive Summary
+
+**BIOWATCH-AI** is a futuristic biological surveillance and early outbreak signal detection platform designed for epidemiologists, biosecurity researchers, data engineers, and global health analysts. 
+
+Built around the core tenet of **epistemic integrity**, BIOWATCH-AI addresses a critical pitfall in modern computational epidemiology: *overconfident black-box machine learning models operating in low-signal, high-noise surveillance regimes*. Rather than claiming fabricated predictions or premature outbreak confirmations, BIOWATCH-AI establishes a baseline-first mathematical architecture where statistical anomalies are rigorously distinguished from confirmed clinical diagnoses.
+
+```
+                          ┌────────────────────────────┐
+                          │  Multi-Stream Ingestion   │
+                          │ (Epi, Genomic, Env, Events)│
+                          └─────────────┬──────────────┘
+                                        │
+                                        ▼
+                          ┌────────────────────────────┐
+                          │   Statistical Baselines    │
+                          │ (CUSUM, EWMA, MAD, Poisson)│
+                          └─────────────┬──────────────┘
+                                        │
+                                        ▼
+                          ┌────────────────────────────┐
+                          │  ML Anomaly Candidate Lab  │
+                          │(Downstream - Inert by Dflt)│
+                          └─────────────┬──────────────┘
+                                        │
+                                        ▼
+                          ┌────────────────────────────┐
+                          │ Human Adjudication & Triage│
+                          │  "Signal Detected" Alert   │
+                          └────────────────────────────┘
+```
+
+---
+
+## 🎥 Media & Promotional Cinema Video
+
+A high-definition advertising and product showcase video (`BIOWATCH-AI-promo.mp4`) is packaged directly within this repository:
+
+- **Duration:** 51.8 seconds (1920×1080 Full HD, 30 fps, H.264 + AAC 192k)
+- **Audio Master:** Original multi-layered cinematic electronic soundtrack with dynamic sub-bass impacts, riser tension sweeps, data ticks, and stereo transition whooshes.
+- **Visuals:** 11 choreographed sequences featuring Ken Burns dynamic panning, cross-dissolve transitions, live statistical engine traces, explainable AI attribution breakdowns, and continental African surveillance telemetry.
+
+👉 **Direct File Link:** [`media/BIOWATCH-AI-promo.mp4`](media/BIOWATCH-AI-promo.mp4)  
+👉 **Asset Folder:** [`assets/`](assets/) (contains high-res transparent PNGs, SVGs, and feature contact sheets)
+
+---
+
+## 🖥️ Live Interface Preview & Screenshots
+
+The primary interface is contained in a **zero-dependency, single-file architecture** (`index.html`) featuring 25 specialized modules rendered through pure HTML5, CSS3 tokens, inline vector SVG engines, and embedded geographic topology.
+
+<p align="center">
+  <img src="assets/dashboard-overview.png" width="95%" alt="Global Command Center & Surveillance Map" />
+</p>
+
+<p align="center">
+  <img src="assets/intelligence-overview.png" width="95%" alt="Explainable AI, Genomic Intelligence & Africa Focus" />
+</p>
+
+---
+
+## 🏛️ Core Design Principles & Epistemic Rules
+
+1. **Baseline Before Model:** No machine-learning model output is permitted to trigger a signal without an established statistical baseline (CUSUM, EWMA, 52-week Seasonal Confidence Bands, Robust MAD) evaluated under identical temporal splits.
+2. **Strict Epistemic Tagging:** Every metric, card, and insight renders with mandatory categorization:
+   - `ESTABLISHED` — Empirically verified ground truth or established biological principles.
+   - `ASSUMPTION` — Underlying structural or operational assumptions.
+   - `HYPOTHESIS` — Formulated research conjecture awaiting testing.
+   - `PRELIMINARY` — Emerging observational data subject to reporting lag.
+   - `PREDICTION` — Algorithmic projection with explicit uncertainty bounds.
+   - `PLAN` — Planned methodological or operational step.
+   - `SIMULATED` — Synthetically generated demonstration data.
+3. **Constrained Outbreak Vocabulary:** The platform strictly prohibits declaring confirmed outbreaks. All signal triggers are restricted to:
+   - `Signal detected`
+   - `Unusual activity`
+   - `Elevated reporting`
+   - `Requires investigation`
+   - `Evidence insufficient for confirmation`
+4. **Data Availability Honesty:** Missing or sparse reporting is visually hatched and tagged `DATA NOT AVAILABLE` — it is **never** disguised as "green/calm".
+5. **No Hallucinated Benchmarks:** Untrained candidate models display *"Awaiting experiment"* rather than misleading synthetic ROC-AUC or precision figures.
+
+---
+
+## 🗺️ 25 Integrated Platform Modules
+
+| Category | Modules | Core Capabilities |
+|---|---|---|
+| **Surveillance Command** | Global Command Center<br>Surveillance Map<br>Disease Intelligence | Multi-stream aggregation, equirectangular world topology with zoom/pan, syndrome timeseries. |
+| **Detection Engines** | Signal Detection Engine<br>Early-Warning Center<br>Explainable AI (XAI) | Parametric CUSUM, EWMA, 52-wk baseline filters, human triage queues, Shapley/arithmetic decomposition. |
+| **Machine Learning Lab** | ML Research Lab<br>Model Evaluation Bench<br>Model & Experiment Cards | Temporal train/validation splitting, feature-leakage audit, standardised metadata cards. |
+| **Multi-Omics & Biology** | Genomic Surveillance<br>Biological Signals<br>Environmental Feeds | Lineage frequency dynamics, QC ambiguity filtering, wastewater viral shedding, meteorological covariance. |
+| **Regional Intelligence** | Nigeria / Africa View<br>Event-Based Intelligence | Sub-national state metrics, reporting-lag modeling, automated multi-tier news and public bulletin validation. |
+| **Data & Governance** | Data Connectors (14 APIs)<br>Data Quality Center<br>Responsible AI & Security | Schema contracts (WHO, CDC, ECDC, GISAID), completeness heatmaps, append-only decision logs. |
+
+---
+
+## 🚀 Quick Start
+
+### Option A: Instant Single-File Run (Recommended)
+No build tools, no Node.js, and no Docker required. Open `index.html` directly in any web browser:
+```bash
+# Clone the repository
+git clone https://github.com/ademmanlincoln07-crypto/biowatch-ai.git
+cd biowatch-ai
+
+# Open in browser
+open index.html        # macOS
+xdg-open index.html    # Linux
+start index.html       # Windows
+```
+
+### Option B: Full Microservice Stack (Docker Compose)
+To launch the full modular environment (FastAPI detection engine + Vite React client):
+```bash
+docker compose up --build
+```
+- **Web Frontend:** `http://localhost:8080`
+- **FastAPI Detection Engine:** `http://localhost:8000`
+- **API Documentation:** `http://localhost:8000/docs`
+
+---
+
+## 📁 Repository Structure
+
+```
+biowatch-ai/
+├── index.html                       # Complete, self-contained single-file platform (v0.4.0)
+├── world.compact.txt                # Vector country polygon topology (153 territories, 89 KB)
+├── docker-compose.yml               # Container orchestration for dual-service stack
+│
+├── media/
+│   └── BIOWATCH-AI-promo.mp4        # 51.8s Full HD cinematic advertising spot
+│
+├── assets/
+│   ├── biowatch-logo.svg            # Scalable vector logo (DNA shield + pulse line)
+│   ├── biowatch-logo.png            # High-resolution raster logo (1024x1024 transparent)
+│   ├── biowatch-logo-transparent.png# Alpha-verified transparent mark
+│   ├── dashboard-overview.png       # 1080p UI contact sheet (Command Center & Map)
+│   ├── intelligence-overview.png    # 1080p UI contact sheet (XAI, ML Lab & Africa)
+│   └── biowatch-collage.png         # Modular high-density feature board
+│
+├── docs/
+│   └── FULL-SOURCE-ARCHITECTURE.md  # Comprehensive technical specification & architecture logs
+│
+├── src/
+│   ├── backend/                     # FastAPI computational service
+│   │   ├── app/
+│   │   │   ├── main.py              # REST API endpoints (/api/detect, /api/health)
+│   │   │   ├── detectors.py         # Pure NumPy implementation of CUSUM, EWMA, MAD
+│   │   │   ├── connectors.py        # 14 Schema specifications for global health APIs
+│   │   │   └── synth.py             # Deterministic PRNG time-series generator
+│   │   ├── requirements.txt
+│   │   └── Dockerfile
+│   │
+│   └── frontend/                    # Modular React 19 + Vite + Tailwind frontend
+│       ├── src/
+│       │   ├── pages/               # Modular views corresponding to platform engines
+│       │   ├── components/          # Reusable scientific UI components
+│       │   └── lib/                 # Client-side analytics & state store
+│       ├── package.json
+│       └── Dockerfile
+│
+└── .github/
+    └── workflows/
+        └── pages.yml                # Automatic GitHub Pages CI/CD deployment
+```
+
+---
+
+## 🔒 Scientific Governance & Responsible AI
+
+> **IMPORTANT DISCLAIMER**  
+> BIOWATCH-AI is an educational and research prototype. It is **not** a certified medical device, does not provide clinical diagnostic guidance, and must not be used as the sole basis for operational public health quarantines or official disease declarations. Correlation does not establish biological causation. All analytical models require human-in-the-loop expert epidemiological assessment.
+
+---
+
+## 📄 License
+
+This project is open-sourced under the **Research-Use Only** MIT-derivative terms for academic and biosecurity transparency. See the [LICENSE](LICENSE) file for details.

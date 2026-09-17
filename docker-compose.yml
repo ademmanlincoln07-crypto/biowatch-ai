@@ -1,0 +1,41 @@
+# BIOWATCH-AI — research prototype stack.
+# NOTE: this compose file starts a development/demonstration environment only.
+# It is NOT hardened, has no authentication, and must not be exposed publicly
+# or connected to restricted data sources.
+services:
+  api:
+    build: ./src/backend
+    container_name: biowatch-api
+    ports:
+      - "8000:8000"
+    environment:
+      BIOWATCH_MODE: "prototype"
+      # No connector credentials are defined. Adding one requires a recorded
+      # licence review (see the Decision Log module).
+    restart: unless-stopped
+
+  web:
+    build: ./src/frontend
+    container_name: biowatch-web
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Specified for the target architecture; not required by the prototype.
+  # Uncomment only alongside a real ingestion/storage implementation.
+  # db:
+  #   image: postgres:16-alpine
+  #   container_name: biowatch-db
+  #   environment:
+  #     POSTGRES_DB: biowatch
+  #     POSTGRES_USER: biowatch
+  #     POSTGRES_PASSWORD: change-me
+  #   volumes:
+  #     - biowatch-pgdata:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+
+# volumes:
+#   biowatch-pgdata:

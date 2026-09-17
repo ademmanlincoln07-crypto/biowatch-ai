@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+/* ============================================================
+   BIOWATCH-AI — DESIGN SYSTEM (SEGMENT 1)
+   Scientific / public-health intelligence aesthetic.
+   Dark, low-chroma substrate + restrained functional colour.
+   No neon, no gaming glow, no decorative motion.
+   ============================================================ */
+
+@theme {
+  /* --- Substrate: cool desaturated "lab slate" ------------- */
+  --color-bw-void: #070b0f;
+  --color-bw-base: #0b1117;
+  --color-bw-panel: #111a22;
+  --color-bw-panel2: #16212b;
+  --color-bw-line: #1e2c37;
+  --color-bw-line2: #2a3b49;
+
+  /* --- Text ------------------------------------------------ */
+  --color-bw-text: #e6eef5;
+  --color-bw-muted: #93a7b8;
+  --color-bw-dim: #62788a;
+
+  /* --- Primary: "biosignal teal" (assay / culture) --------- */
+  --color-bw-primary: #2ea89a;
+  --color-bw-primary-bright: #45c9b8;
+  --color-bw-primary-dim: #16333a;
+
+  /* --- Secondary: genomic violet, data blue, env cyan ------ */
+  --color-bw-genomic: #8b7ad6;
+  --color-bw-data: #4a90c4;
+  --color-bw-env: #4bb1a8;
+  --color-bw-lab: #c9a227;
+
+  /* --- Alert states (WCAG-checked on dark substrate) ------- */
+  --color-alert-green: #3fa66b;
+  --color-alert-yellow: #d7b23c;
+  --color-alert-orange: #d9822b;
+  --color-alert-red: #cf4a4a;
+
+  /* --- Evidence-tag palette -------------------------------- */
+  --color-ev-established: #3fa66b;
+  --color-ev-assumption: #8f9bb3;
+  --color-ev-hypothesis: #8b7ad6;
+  --color-ev-preliminary: #d7b23c;
+  --color-ev-prediction: #4a90c4;
+  --color-ev-plan: #6b7f91;
+  --color-ev-simulated: #d9822b;
+
+  --font-sans: "Inter", "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular,
+    Menlo, Consolas, monospace;
+
+  --radius-panel: 6px;
+}
+
+:root {
+  color-scheme: dark;
+  --bw-grid: rgba(120, 160, 185, 0.05);
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--color-bw-base);
+  color: var(--color-bw-text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Faint isometric lab-grid substrate — static, non-decorative depth cue */
+.bw-grid-bg {
+  background-image:
+    linear-gradient(var(--bw-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bw-grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* --- Typography scale ------------------------------------- */
+.bw-h1 { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.015em; }
+.bw-h2 { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; }
+.bw-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-bw-dim);
+}
+.bw-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+/* --- Scrollbars ------------------------------------------- */
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: #22323f; border-radius: 6px; border: 3px solid transparent;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-thumb:hover { background: #33485a; background-clip: content-box; }
+
+/* --- Focus visibility (accessibility) --------------------- */
+:focus-visible {
+  outline: 2px solid var(--color-bw-primary-bright);
+  outline-offset: 2px;
+}
+
+/* --- Motion: only state transitions, never ambience -------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.bw-pulse-dot { position: relative; }
+.bw-pulse-dot::after {
+  content: ""; position: absolute; inset: -4px; border-radius: 9999px;
+  border: 1px solid currentColor; opacity: 0.35;
+}
+
+/* Recharts tooltip normalisation */
+.recharts-default-tooltip {
+  background: #16212b !important;
+  border: 1px solid #2a3b49 !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+}
